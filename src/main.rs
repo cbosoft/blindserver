@@ -78,7 +78,7 @@ fn open_archive(b: Bytes) {
 }
 
 
-async fn monch(mut multipart: Multipart) {
+async fn upload(mut multipart: Multipart) {
     while let Some(field) = multipart.next_field().await.unwrap() {
         let data = field.bytes().await.unwrap();
         open_archive(data);
@@ -90,7 +90,7 @@ async fn monch(mut multipart: Multipart) {
 async fn main() {
     // build our application with a single route
     let app = Router::new()
-        .route("/monch", post(monch))
+        .route("/upload", post(upload))
         .nest_service("/docs", ServeDir::new(DEST))
         .layer(DefaultBodyLimit::max(MAX_FILE_SIZE));
 

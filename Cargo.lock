@@ -98,6 +98,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2261d10cca569e4643e526d8dc2e62e433cc8aba21ab764233731f8d369bf394"
 
 [[package]]
+name = "blindserver"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "flate2",
+ "tar",
+ "tokio",
+ "tower",
+ "tower-http",
+]
+
+[[package]]
 name = "bytes"
 version = "1.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -401,18 +413,6 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys 0.59.0",
-]
-
-[[package]]
-name = "monch"
-version = "0.1.0"
-dependencies = [
- "axum",
- "flate2",
- "tar",
- "tokio",
- "tower",
- "tower-http",
 ]
 
 [[package]]
